@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include ../partials/head.ejs %>
+<body>
+  <div class="add-new-issue" id="new-issue">New Issue</div>
+  <div id="issue-board">
+
+    <% for(let i=0; i < issues.length; i++) { %>
+      <div class="card">
+        <h3 class="issue-title">
+          <span style="color: gray"><%= (issues[i].issueProject).toUpperCase() %>:</span>&nbsp;
+          <a target="_blank" href="<%= issues[i].issueRepository %>"> <%= issues[i].issueTitle %></a> 
+          <span class="<%= issues[i].issueStatus %>"><%= issues[i].issueStatus %></span>
+        </h3>
+        <div class="issue-desc"><%= issues[i].issueDescription %></div>
+        <div class="issue-date">
+          Created by <strong><%= issues[i].issueCreator %></strong> on <%= new Date(issues[i].date) %>
+        </div>
+        <div class="issue-action">
+          <span data-id="<%= issues[i]._id %>" class="status-in-progress">IN PROGRESS</span>&nbsp;&nbsp;
+          <span data-id="<%= issues[i]._id %>" class="status-close">CLOSE</span>&nbsp;&nbsp;
+          <span data-id="<%= issues[i]._id %>" class="status-open">OPEN</span>
+        </div>
+      </div>
+    <% } %>
+
+  </div>
+
+  <div id="issue-form" class="issue-form-hide">
+    <form action="/issue/new" method="POST">
+      <div style="display: flex; justify-content: space-between">
+        <input required type="text" class="issue-title" name="issue-title" placeholder="Title of The Issue">
+        <input required type="text" class="issue-project-name" name="issue-project-name" placeholder="Project Name">
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-top: 1px;">
+        <input type="url" class="issue-repository" name="issue-repository" placeholder="Link to Repository">
+        <input required type="text" class="issue-creator" name="issue-creator" placeholder="Your Name">
+      </div>
+      <textarea name="issue-description" class="issue-description" placeholder="Issue Description"></textarea>
+      <input type="submit" class="submit" value="Report">
+    </form>
+  </div>
+  <div class="overlay"></div>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

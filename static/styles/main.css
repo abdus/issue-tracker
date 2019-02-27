@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input, textarea {
+  background: #fff;
+}
+
+input::placeholder, textarea::placeholder {
+  color: blueviolet;
+}
+.add-new-issue {
+  margin: 1rem auto;
+  padding: 10px;
+  width: 160px;
+  text-align: center;
+  border: 1px solid darkgreen;
+  background: darkgreen;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#issue-board {
+  width: 90%;
+  margin: auto;
+}
+.card {
+  position: relative;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px 0 lightgray;
+  transition: .3s cubic-bezier(.68,-0.55,.27,1.55) all;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px 0 lightgray;
+}
+
+.card .issue-title {
+  margin: 25px 0 10px 0;
+  font-weight: 500;
+}
+.card .issue-desc {
+  color: gray;
+  font-weight: 300;
+}
+.card .issue-date {
+  margin: 10px 0;
+  font-size: .7em;
+  font-style: italic;
+}
+.card .issue-action {
+  margin-top: 20px;
+  font-weight: 900;
+  font-size: .7em;
+  color: gray;
+}
+.card .issue-action .status-in-progress:hover {
+  color: yellow;
+  cursor: pointer;
+}
+.card .issue-action .status-close:hover {
+  color: red;
+  cursor: pointer;
+}
+.card .issue-action .status-open:hover {
+  color: darkgreen;
+  cursor: pointer;
+}
+
+
+
+
+
+#issue-form {
+  position: fixed;
+  top: 5rem;
+  left: 22.5%;
+  width: 55%;
+  margin: auto;
+  background: white;
+  box-shadow: 0 0 10px 0 lightgray;
+  border-radius: 4px;
+  padding: 20px;
+  transition: .3s cubic-bezier(.68,-0.55,.27,1.55) all;
+}
+.issue-form-hide {
+  transform: translateY(-200%);
+}
+.issue-form-show {
+  transform: translateY(0%);
+}
+#issue-form form {
+  width: auto;
+  margin: auto;
+}
+#issue-form form input {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+#issue-form form textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  resize: vertical;
+}
+#issue-form form .submit {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid blueviolet;
+  background: blueviolet;
+  border-radius: 4px;
+  font-size: inherit;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+@media (max-width: 800px) {
+  #issue-board {
+    width: 95%;
+  }
+  .card .issue-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #issue-form {
+    left: 0;
+    width: 100%;
+  }
+}

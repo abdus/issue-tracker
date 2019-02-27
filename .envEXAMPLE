@@ -1,0 +1,2 @@
+DB_STRING=mongodb://localhost/issue-tracker-db
+USER_PASSWORD=somethingshit

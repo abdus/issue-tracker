@@ -15,11 +15,13 @@ a:hover {
   text-decoration: underline;
 }
 
-input, textarea {
+input,
+textarea {
   background: #fff;
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: blueviolet;
 }
 .add-new-issue {
@@ -46,7 +48,7 @@ input::placeholder, textarea::placeholder {
   padding: 10px;
   border-radius: 4px;
   box-shadow: 0 0 5px 0 lightgray;
-  transition: .3s cubic-bezier(.68,-0.55,.27,1.55) all;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
 }
 .card:hover {
   transform: translateY(-4px);
@@ -63,13 +65,13 @@ input::placeholder, textarea::placeholder {
 }
 .card .issue-date {
   margin: 10px 0;
-  font-size: .7em;
+  font-size: 0.7em;
   font-style: italic;
 }
 .card .issue-action {
   margin-top: 20px;
   font-weight: 900;
-  font-size: .7em;
+  font-size: 0.7em;
   color: gray;
 }
 .card .issue-action .status-in-progress:hover {
@@ -85,10 +87,6 @@ input::placeholder, textarea::placeholder {
   cursor: pointer;
 }
 
-
-
-
-
 #issue-form {
   position: fixed;
   top: 5rem;
@@ -99,7 +97,7 @@ input::placeholder, textarea::placeholder {
   box-shadow: 0 0 10px 0 lightgray;
   border-radius: 4px;
   padding: 20px;
-  transition: .3s cubic-bezier(.68,-0.55,.27,1.55) all;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) all;
 }
 .issue-form-hide {
   transform: translateY(-200%);
@@ -136,6 +134,27 @@ input::placeholder, textarea::placeholder {
   cursor: pointer;
 }
 
+#auth {
+  width: 45%;
+  margin: 5rem auto;
+}
+#auth form {
+  margin: auto;
+}
+#auth form input {
+  width: 50%;
+  border: 1px solid lightgray;
+  border-radius: 0.3rem;
+  padding: 10px;
+  margin-bottom: 2px;
+  background: darkgreen;
+}
+#auth form input[type='text'],
+#auth form input[type='password'] {
+  width: 100%;
+  min-width: 100%;
+  background: #fff;
+}
 
 @media (max-width: 800px) {
   #issue-board {
